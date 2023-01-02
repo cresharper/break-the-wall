@@ -1,7 +1,6 @@
 const express = require('express');
 const request = require('request');
 const cheerio = require('cheerio');
-const fs = require('fs');
 const app = express();
 const port = 8000;
 
