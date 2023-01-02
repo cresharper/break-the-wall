@@ -2,12 +2,21 @@ console.log('front end scripts')
 
 const urlButton = document.getElementById('submitUrl')
 const input = document.getElementById('url')
+const submitError = document.getElementById('error')
 const contentDiv = document.getElementById('content-area')
 const loadingRing = document.getElementById('loading-ring')
 
 const baseUrl = 'http://localhost:8000/'
 
 urlButton.addEventListener('click', submitUrl)
+
+input.addEventListener('keyup', function() {
+    // console.log(this.style.borderColor)
+    if(this.style.borderColor != '') {
+        this.style.borderColor = '';
+        submitError.innerHTML = '';
+    }
+})
 
 async function getArticle() {
     const res = await fetch(baseUrl + 'info/connor?key=hello', {
@@ -21,15 +30,18 @@ async function getArticle() {
 
 async function submitUrl(e) {
     e.preventDefault()
-    input.style.color = 'gray'
-    loadingRing.style.display = 'block'
     if (input.value == '') {
+        input.style.borderColor = 'red'
+        submitError.innerHTML = 'Please enter a URL'
         return
     }
     if(input.value.indexOf('seekingalpha.com') === -1) {
-        alert('please enter a seeking alpha article')
+        input.style.borderColor = 'red'
+        submitError.innerHTML = 'The URL needs to be Seeking Alpha'
         return
     }
+    input.style.color = 'gray'
+    loadingRing.style.display = 'block'
     const res = await fetch(baseUrl, {
         method: 'POST',
         headers: {

@@ -16,6 +16,8 @@
 #content-area {
     max-width: 1100px;
     margin: 3rem auto;
+    font-size: 18px;
+    line-height: 32px;
 }
 
 #content-area img {
@@ -61,4 +63,8 @@
     100% {
       transform: rotate(360deg);
     }
+  }
+
+ div#error {
+    color: red;
   }

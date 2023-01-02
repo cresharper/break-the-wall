@@ -1,3 +1,7 @@
+// ===== // // ===== // // ===== // // ===== // 
+// SAMPLE SCRIPT - DRAFT OF IDEA IS/WAS HERE
+// ===== // // ===== // // ===== // // ===== // 
+
 const request = require('request');
 const cheerio = require('cheerio');
 const readline = require('readline-sync')
