@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Seeking Alpha - read any aricle you want</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <img class="site-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Seeking_Alpha_Logo.svg" alt="SA Logo">
+        <section class="form-area">
+            <h1>Seeking Alpha article reader</h1>
+            <h2>enter a seeking alpha URL to read it.</h2>
+            <form>
+                <input type="text" id="url">
+                <button id="submitUrl">Read Article</button>
+            </form> 
+        </section>
+
+        <div id="content-area">
+            <div id="loading-ring" style="display: none;">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                <div>getting your article now...hold on</div>
+            </div>
+        </div>
+        <script src="scripts.js"></script>
+    </body>
+</html>

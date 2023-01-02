@@ -1,0 +1,22 @@
+{
+  "name": "seeking-alpha-scraper",
+  "version": "1.0.0",
+  "description": "Bypass the paywall of a seeking alpha article",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "express": "^4.18.2",
+    "fs": "0.0.1-security",
+    "readline-sync": "^1.4.10",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
