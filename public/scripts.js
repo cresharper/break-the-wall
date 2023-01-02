@@ -11,7 +11,6 @@ const baseUrl = 'http://localhost:8000/'
 urlButton.addEventListener('click', submitUrl)
 
 input.addEventListener('keyup', function() {
-    // console.log(this.style.borderColor)
     if(this.style.borderColor != '') {
         this.style.borderColor = '';
         submitError.innerHTML = '';
@@ -23,7 +22,6 @@ async function getArticle() {
         method: 'GET'
     })
     const data = await res.json()
-    console.log(data.info)
     loadingRing.style.display = 'none'
     contentDiv.innerHTML = data.info
 }
