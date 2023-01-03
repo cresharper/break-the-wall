@@ -24,6 +24,15 @@ async function getArticle() {
     const data = await res.json()
     loadingRing.style.display = 'none'
     contentDiv.innerHTML = data.info
+    document.querySelectorAll('#content-area a').forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault()
+            console.log(e.target.href)
+            if((e.target.href.indexOf('seekingalpha.com/article') > -1) || (e.target.href.indexOf('seekingalpha.com/news') > -1)) {
+                alert('ITS AN ARTICLE OR NEWS LINK')
+            }
+        })
+    })
 }
 
 async function submitUrl(e) {
