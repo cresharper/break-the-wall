@@ -21,7 +21,6 @@ app.get('/info/:dynamic', (req,res) => {
 
 app.post('/', (req, res) => {
     const { wantedUrl } = req.body
-    console.log('info sent: ' + wantedUrl)
     if (!wantedUrl) {
         return res.status(400).send({status: 'failed'})
     }
@@ -33,6 +32,9 @@ app.post('/', (req, res) => {
         }
         else {
             let $ = cheerio.load(body);
+            articleContent.push($('[data-test-id="author-brief"]').html())
+            articleContent.push($('[data-test-id="article-summary-title"]').html())
+            articleContent.push($('ul.lo-d').html());
             $('[data-test-id="content-container"] > *').each(function(index) {
                 articleContent.push($(this).html())
             })
