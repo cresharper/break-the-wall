@@ -69,3 +69,8 @@
  div#error {
     color: red;
   }
+
+  /* Hide garbage, follow/subscribe links etc */
+  #content-area button, a[href*="/checkout"] {
+    display: none;
+  }
